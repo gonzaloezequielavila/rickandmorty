@@ -1,19 +1,74 @@
-.listItem {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20em;;
-    border-radius: 1em;
-    border: solid black;
-    background-color: gray;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+/* font-family: 'Indie Flower', cursive; */
 
-img{
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 200px;
+    margin: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    position: relative;
+  }
+  
+  .card:hover {
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .overlay {
+    position: relative;
+    border-radius: 8px;
+  }
+
+  .cardImage {
     width: 100%;
-}
-.listItem:hover {
-    background-color: #00990dc9;
-    color: rgb(245, 239, 220);
-}
+    height: auto;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .cardDetails {
+    padding: 16px;
+  }
+  
+  .cardName {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-family: 'Bruno Ace', cursive;
+  }
+  
+  .cardInfo {
+    margin: 4px 0;
+    font-size: 14px;
+    font-family: 'Indie Flower', cursive;
+  }
+
+  .button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .button:hover {
+    color: #ff0000;
+  }
+
