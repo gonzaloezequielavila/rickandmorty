@@ -25,7 +25,7 @@
   
   .card:hover {
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
-    background-color: black;
+    background-color: rgb(39, 228, 39);
     color: white;
   }
 
@@ -59,6 +59,49 @@
     padding: 4px 8px;
     font-size: 14px;
     font-family: 'Bruno Ace', cursive;
+  }
+
+  .favoriteContainer{
+    position: absolute;
+    /* background-color: transparent; */
+    top: 0;
+    left: 0;
+    outline: none;
+  }
+
+  .favoriteButton{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 8px;
+    /* font-size: 15px; */
+    /* background-color: transparent; */
+    border-radius: 50%;
+    padding: 4px 8px;
+    /* border: none; */
+    outline: none;
+  }
+  
+  .favoriteButton:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
+  .unFavoriteButton{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 8px;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 4px 8px;
+    outline: none;
+    border: none;
+  }
+
+  .unFavoriteButton:hover{
+    cursor: pointer;
+    transform: scale(1.1);
   }
   
   .cardInfo {

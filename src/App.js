@@ -8,9 +8,9 @@ import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav';
 import Detail from './views/Detail.jsx'
 import About from './views/About.jsx';
-import Home from "./views/Home.jsx"
 import Error404 from './components/Error/Error404';
 import Form from './components/Form/Form';
+import Favorites from './views/Favorites';
 
 //React.useState
 function App() {
@@ -85,6 +85,10 @@ function App() {
             <Route 
                path="/about" 
                element={<About/>}/>
+
+            <Route 
+               path="/favorites" 
+               element={<Favorites/>}/>
 
             <Route 
                path="*" 
