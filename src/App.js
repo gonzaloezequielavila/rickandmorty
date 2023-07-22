@@ -4,10 +4,10 @@ import {Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
 //! Components
-import Cards from './components/Cards/Cards.jsx';
-import Nav from './components/Nav/Nav';
 import Detail from './views/Detail.jsx'
 import About from './views/About.jsx';
+import Cards from './components/Cards/Cards.jsx';
+import Nav from './components/Nav/Nav';
 import Error404 from './components/Error/Error404';
 import Form from './components/Form/Form';
 import Favorites from './views/Favorites';
@@ -88,7 +88,7 @@ function App() {
 
             <Route 
                path="/favorites" 
-               element={<Favorites/>}/>
+               element={<Favorites onClose={onClose}/>}/>
 
             <Route 
                path="*" 

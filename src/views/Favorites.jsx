@@ -1,26 +1,12 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import Card from '../components/Card/Card'
+import FavoritesText from '../components/Favorites/FavoritesText'
+import styles from './Favorites.module.css'
 
-function Favorites({myFavorites}) {
+export default function Favorites() {
     return (
-      <div>{
-          myFavorites?.map(({id, name, species, image, status}) => (<Card 
-          key= {id}
-          id={id}
-          name={name}
-          status={status}
-          species={species}
-          image={image}
-          />) )
-          }</div>
+      <div className={styles.container}>
+        <h1 className={styles.text}>Favorites:</h1>
+        <FavoritesText/>
+      </div>
     )
   }
-
-export const mapStateToProps = (state) => {
-    return{
-        myFavorites: state.myFavorites,
-    };
-}
-
-export default connect(mapStateToProps)(Favorites);

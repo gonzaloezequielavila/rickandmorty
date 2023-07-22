@@ -37,7 +37,7 @@ function Card({name, status, species, gender, origin, image, onClose, id, addFav
          <div className={styles.overlay}>
             <img className={styles.cardImage} src={image} alt={`No se encuentra la imagen de ${name}`} />
             <Link to={`/detail/${id}`}>
-               <h3 className={styles.cardName}>{name}</h3>
+               <h3 className={styles.cardName}> {id} | {name}</h3>
             </Link>
          <div className={styles.favoriteContainer}>
             {

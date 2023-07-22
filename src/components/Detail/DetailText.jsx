@@ -10,8 +10,8 @@ export default function DetailText() {
 
 
     useEffect(() => {
-        axios.get(`https://rickandmortyapi.com/api/character/${id}`).
-        then(({ data }) => {
+        axios.get(`https://rickandmortyapi.com/api/character/${id}`)
+        .then(({ data }) => {
            if (data.name) {
               setCharacterDetail(data);
             // console.log(data)
@@ -23,17 +23,21 @@ export default function DetailText() {
      }, [id]);
 
   return (
+   <div className={styles.container}>
+   <h1 className={styles.pageTitle}>{characterDetail.name}</h1>
+
    <div className={styles.card}>
-{characterDetail ? (
- <div className={styles.cardContent}> 
-    <h2 className={styles.cardTitle}>{characterDetail.name} </h2>
-    <h4>{characterDetail.status}</h4>
-    <h4>{characterDetail.species}</h4>
-    <h4>{characterDetail.gender}</h4>
-    <h4>{characterDetail.origin?.name}</h4>
-    <img className={styles.characterImage} src={characterDetail.image} alt=""/>
+   {characterDetail ? (
+   <div className={styles.cardContent}> 
+   <img className={styles.characterImage} src={characterDetail.image} alt=""/>
+    {/* <h2 className={styles.cardTitle}>{characterDetail.name} </h2> */}
+    <h4 className={styles.details}>Status: {characterDetail.status}</h4>
+    <h4 className={styles.details}>Specie: {characterDetail.species}</h4>
+    <h4 className={styles.details}>Gender: {characterDetail.gender}</h4>
+    <h4 className={styles.details}>Origin: {characterDetail.origin?.name}</h4>
  </div>
 ) : <h3> Loading ...</h3>}
    </div>
+</div>
  )
 }

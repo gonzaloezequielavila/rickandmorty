@@ -3,6 +3,8 @@ import styles from "./Cards.module.css"
 
 export default function Cards({characters, onClose}) {
    return (
+   <div className={styles.container}>
+   <h1 className={styles.home}>Home</h1>
    <div className={styles.listItem}>
       {characters.map(character => 
          <Card
@@ -16,5 +18,7 @@ export default function Cards({characters, onClose}) {
          image={character.image}
          onClose={onClose}
          />)}
-   </div>);
+   </div>
+   </div>
+   );
 }
