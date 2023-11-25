@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+/* font-family: 'Indie Flower', cursive; */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: 0.3s;
+  }
+.container:hover{
+    transform: scale(1.1);
+}
+  
+  .card {
+    width: 200px;
+    margin: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 1s ease-in-out;
+    position: relative;
+  }
+  
+  .card:hover {
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+    background-color: rgb(39, 228, 39);
+    color: white;
+  }
+
+  .overlay {
+    position: relative;
+    border-radius: 8px;
+  }
+
+  .cardImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .cardDetails {
+    padding: 16px;
+  }
+
+  /* .cardDetails:hover {
+    color: white;
+  } */
+  
+  .cardName {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: #ffffff;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-family: 'Bruno Ace', cursive;
+  }
+
+  .favoriteContainer{
+    position: absolute;
+    /* background-color: transparent; */
+    top: 0;
+    left: 0;
+    outline: none;
+  }
+
+  .favoriteButton{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 8px;
+    /* font-size: 15px; */
+    /* background-color: transparent; */
+    border-radius: 50%;
+    padding: 4px 8px;
+    /* border: none; */
+    outline: none;
+  }
+  
+  .favoriteButton:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
+  .unFavoriteButton{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 8px;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 4px 8px;
+    outline: none;
+    border: none;
+  }
+
+  .unFavoriteButton:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
+  .cardInfo {
+    margin: 4px 0;
+    font-size: 14px;
+    font-family: 'Indie Flower', cursive;
+  }
+
+  .button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: none;
+    background-color: transparent;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .button:hover {
+    color: #ff0000;
+  }
+

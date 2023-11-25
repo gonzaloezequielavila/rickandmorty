@@ -1,0 +1,23 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home {
+display: flex;
+justify-content: center;
+font-family: 'Fredoka One', cursive;
+font-size: 48px;
+color: #39CCCC;
+text-shadow: 2px 2px rgb(0, 0, 0);
+}
+.listItem {
+    display: flex;
+    flex-direction: row;
+    padding: 2em;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+    margin: 2em;
+  }
+
