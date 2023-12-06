@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonContainer{
+    display: flex;
+    padding: 10px;
+}
+
+.button{
+    padding: 10px;
+    /* border: none; */
+    background-color: rgb(39, 228, 39);
+    cursor: pointer;
+    border-radius: 10px;
+    
+}
+
+.button:hover{
+    background-color: #fec72e;
+    color: #fff;
+}
