@@ -47,7 +47,7 @@ function App() {
    }, [access]);
 
    const onSearch = (id) => {
-      axios(`https://rickandmortyapi.com/api/character/${id}`)
+      axios(`http://localhost:3001/rickandmorty/character/${id}`)
       .then(({data})=>{
          if(!characters.find(char => char.id === data.id)){
             if(data.name){
