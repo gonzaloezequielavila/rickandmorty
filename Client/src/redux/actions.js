@@ -8,25 +8,31 @@ const URL = 'http://localhost:3001/rickandmorty/fav';
 // }
 
 export const addFav = (character) => {
-    return (dispatch) => {
-       axios.post(`${URL}`, character).then(({ data }) => {
-          return dispatch({
-             type: ADD_FAV,
-             payload: data,
-          });
-       });
+    return async (dispatch) => {
+      try{
+         const {data} = await axios.post(`${URL}`, character);
+         return dispatch({
+            type: ADD_FAV,
+            payload: data,
+         });
+      }catch(error){
+         alert(error)
+      }
     };
  };
 
 
  export const removeFav = (id) => {
-    return (dispatch) => {
-       axios.delete(`${URL}/${id}`).then(({ data }) => {
-          return dispatch({
-             type: REMOVE_FAV,
-             payload: data,
-       });
-       });
+    return async (dispatch) => {
+      try{
+         const {data} = await axios.delete(`${URL}/${id}`)
+         return dispatch({
+            type: REMOVE_FAV,
+            payload: data,
+      });
+      } catch(error){
+         alert(error)
+      }
     };
  };
 

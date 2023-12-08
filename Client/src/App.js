@@ -35,27 +35,29 @@ function App() {
    // const EMAIL = "example@gmail.com";
    // const PASSWORD = "pass123";
 
-   function login({email, password}) {
-      axios(`${URL}login?email=${email}&password=${password}`).then(
-         ({data})=> {
-            const {access} = data;
-            setAccess(access);
-            if(access) {
-               navigate('/home')
-            } else {
-               alert("Invalid Email or Password")
-            }
-         }
-      )
+async function login({email, password}) {
+   try{
+      const {data} = await axios(`${URL}login?email=${email}&password=${password}`)
+
+      const {access} = data;
+      setAccess(access);
+      
+      access && navigate('/home') // if access is true, then navigate to home
+
+   }  catch({response}){
+      // alert(response.message)
+      const {data} = response;
+      alert(data.message)
    }
+}
 
    useEffect(() => {
       !access && navigate('/');
    }, [access]);
 
-   const onSearch = (id) => {
-      axios(`${URL}character/${id}`)
-      .then(({data})=>{
+   const onSearch = async (id) => {
+      try{
+         const { data } = await axios(`${URL}character/${id}`);
          if(!characters.find(char => char.id === data.id)){
             if(data.name){
                setCharacters((oldCharacters) => [...oldCharacters, data])
@@ -63,10 +65,9 @@ function App() {
          } else {
             window.alert(`A character with id number ${id} already exists`)
          }
-      })
-      .catch(err => window.alert(err))
-
-      
+      }catch (error){
+         alert(error)
+      }
    };
 
    const onClose = (id) => {

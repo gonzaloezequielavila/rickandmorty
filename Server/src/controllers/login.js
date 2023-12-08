@@ -8,7 +8,7 @@ const login = (req,res) => {
   
   return userValid 
   ? res.json({access: true})
-  : res.json({access: false})  
+  : res.status(403).json({access: false, message: 'User or Password incorrect'})  
 
   // if (userValid){
   //   return res.json({access: true})
