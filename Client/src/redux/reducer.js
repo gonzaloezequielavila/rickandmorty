@@ -9,17 +9,11 @@ const initialState = {
 const rootReducer = (state=initialState, action) => {
     switch(action.type){
         case ADD_FAV:
-            return {
-                ...state, 
-                myFavorites: [...state.myFavorites, action.payload],
-                allFavorites: [...state.allFavorites, action.payload]
-            }
+            return { ...state, myFavorites: payload, allCharacters: payload };
+
         case REMOVE_FAV:
-            return {
-                ...state, 
-                myFavorites:state.myFavorites.filter(
-                (char) => char.id !== action.payload)
-            }
+                return { ...state, myFavorites: payload };
+
         case ORDER_FAV:
             let favoritesOrdered = state.allFavorites.sort((a,b) => {
                 return action.payload === "Ascendente" ? a.id - b.id : b.id - a.id

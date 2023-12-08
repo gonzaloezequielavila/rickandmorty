@@ -17,6 +17,8 @@ function App() {
    // Por destructuring, recibimos en la primer posición al estado y en la segunda posicion el manejador de estado
    const [characters, setCharacters] = useState([]);
    const [access, setAccess] = useState(false);
+   const API_KEY = 'pi-gonzaloezequielavila'
+   const URL = 'http://localhost:3001/rickandmorty/'
 
    // ! pathname 
    const {pathname} = useLocation(); 
@@ -30,24 +32,29 @@ function App() {
       - hay que instalarlo
    */
    const navigate = useNavigate();
-   const EMAIL = "example@gmail.com";
-   const PASSWORD = "pass123";
+   // const EMAIL = "example@gmail.com";
+   // const PASSWORD = "pass123";
 
-   function login(userData) {
-      if (userData.password === PASSWORD && userData.email === EMAIL) {
-         setAccess(true);
-         navigate('/home');
-      } else {
-         alert("Invalid Email or Password")
-      }
-
+   function login({email, password}) {
+      axios(`${URL}login?email=${email}&password=${password}`).then(
+         ({data})=> {
+            const {access} = data;
+            setAccess(access);
+            if(access) {
+               navigate('/home')
+            } else {
+               alert("Invalid Email or Password")
+            }
+         }
+      )
    }
+
    useEffect(() => {
       !access && navigate('/');
    }, [access]);
 
    const onSearch = (id) => {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`)
+      axios(`${URL}character/${id}`)
       .then(({data})=>{
          if(!characters.find(char => char.id === data.id)){
             if(data.name){

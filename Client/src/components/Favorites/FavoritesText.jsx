@@ -21,7 +21,6 @@ function FavoritesText({myFavorites}) {
     setAux(!aux)
   }
 
-
   return (
 <div>
   <div className={styles.optionsContainer}>
