@@ -16,6 +16,10 @@ function Card({name, status, species, gender, origin, image, onClose, id, addFav
       });
    }, [myFavorites]);
 
+   const handleRemoveFav = (id) => {
+      onClose(id);
+      removeFav(id);
+    }
 
    const handleFavorite = () => {
       if(isFav){
@@ -33,7 +37,7 @@ function Card({name, status, species, gender, origin, image, onClose, id, addFav
 
          <div className={styles.card}>
 
-         <button className={styles.button} onClick={() => onClose(id)}>&times;</button>
+         <button className={styles.button} onClick={() => handleRemoveFav(id)}>&times;</button>
          <div className={styles.overlay}>
             <img className={styles.cardImage} src={image} alt={`No se encuentra la imagen de ${name}`} />
             <Link to={`/detail/${id}`}>

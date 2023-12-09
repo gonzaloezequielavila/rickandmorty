@@ -1,5 +1,5 @@
-import { ADD_FAV, REMOVE_FAV, FILTER_FAV, ORDER_FAV } from "./action-type"
 import axios from 'axios';
+import { ADD_FAV, REMOVE_FAV, FILTER_FAV, ORDER_FAV } from "./action-type"
 
 const URL = 'http://localhost:3001/rickandmorty/fav';
 
