@@ -16,7 +16,7 @@ try{
     // if (character.name) return res.status(200).json(character);
     return (character.name) 
     ? res.status(200).json(character) 
-    : res.status(404).send('Not found');
+    : res.status(404).send('Not Fount');
 } catch (error){
     res.status(500).json({error:error.message})
 }
